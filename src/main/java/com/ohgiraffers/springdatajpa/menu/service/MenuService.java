@@ -89,4 +89,10 @@ public class MenuService {
         Menu foundMenu = menuRepository.findById(menu.getMenuCode()).orElseThrow(IllegalArgumentException::new);
         foundMenu.setMenuName(menu.getMenuName());
     }
+
+    @Transactional
+    public void deleteMenu(Integer menuCode) {
+
+        menuRepository.deleteById(menuCode);
+    }
 }
