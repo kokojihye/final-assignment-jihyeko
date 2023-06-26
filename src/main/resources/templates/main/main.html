@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        button {
+            display: block;
+            width: 300px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>ZZIGZZANG 쇼핑몰 관리 페이지 입니다.</h1>
+<button onclick="location.href='/shop/list'">전체 쇼핑몰 목록 조회하기</button>
+<button onclick="location.href='/shop/querymethod'">누적액으로 쇼핑몰 검색하기</button>
+<button onclick="location.href='/shop/regist'">쇼핑몰 등록하기</button>
+<button onclick="location.href='/shop/modify'">쇼핑몰 수정하기</button>
+<button onclick="location.href='/shop/delete'">쇼핑몰 삭제하기</button>
+</body>
+</html>

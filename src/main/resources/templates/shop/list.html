@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>list</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>쇼핑몰 번호</th>
+    <th>쇼핑몰 이름</th>
+    <th>쇼핑몰 판매 누적액</th>
+    <th>카테고리 코드</th>
+    <th>영업 상태</th>
+  </tr>
+  <tr th:each="shop : ${ shopList }">
+    <td th:text="${ shop.shopCode }"></td>
+    <td th:text="${ shop.shopName }"></td>
+    <td th:text="${ shop.totalSales }"></td>
+    <td th:text="${ shop.categoryCode }"></td>
+    <td th:text="${ shop.orderableStatus }"></td>
+  </tr>
+</table>
+<div id="paging" >
+    <!-- 맨 앞으로 이동 -->
+    <button
+            th:onclick="'location.href=\'/shop/list?page=' + @{${paging.startPage}} + '\''">
+      <<
+    </button>
+    <!-- 이전 페이지로 이동 -->
+    <button
+            th:onclick="'location.href=\'/shop/list?page=' + @{${paging.currentPage - 1}} + '\''"
+            th:disabled="${ shopList.first }">
+      <
+    </button>
+    <!-- 숫자 버튼 -->
+    <th:block th:each="page : ${ #numbers.sequence(paging.startPage, paging.endPage)}">
+      <button th:onclick="'location.href=\'/shop/list?page=' + @{${page}} + '\''"
+              th:text="${ page }"
+              th:disabled="${ paging.currentPage eq page }">
+      </button>
+    </th:block>
+    <!-- 다음 페이지로 이동 -->
+    <button
+            th:onclick="'location.href=\'/shop/list?page=' + @{${paging.currentPage + 1}} + '\''"
+            th:disabled="${ shopList.last }">
+      >
+    </button>
+    <!-- 맨 끝으로 이동 -->
+    <button
+            th:onclick="'location.href=\'/shop/list?page=' + @{${paging.endPage}} + '\''">
+      >>
+    </button>
+  </div>
+</body>
+</html>

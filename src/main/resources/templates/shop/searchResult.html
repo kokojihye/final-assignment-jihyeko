@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>searchList</title>
+</head>
+<body>
+<h1>판매 누적액 [[${totalSales}]]원을 초과하는 쇼핑몰 목록</h1>
+<table>
+  <tr>
+    <th>쇼핑몰 번호</th>
+    <th>쇼핑몰 이름</th>
+    <th>쇼핑몰 판매 누적액</th>
+    <th>카테고리 코드</th>
+    <th>영업 상태</th>
+  </tr>
+  <tr th:each=" shop : ${ shopList }">
+    <td th:text="${shop.shopCode}"></td>
+    <td th:text="${shop.shopName}"></td>
+    <td th:text="${ shop.totalSales }"></td>
+    <td th:text="${shop.categoryCode}"></td>
+    <td th:text="${shop.orderableStatus}"></td>
+  </tr>
+</table>
+</body>
+</html>
