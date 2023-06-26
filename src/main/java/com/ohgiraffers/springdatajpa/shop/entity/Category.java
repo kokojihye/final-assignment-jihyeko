@@ -1,11 +1,19 @@
-package com.ohgiraffers.springdatajpa.menu.dto;
+package com.ohgiraffers.springdatajpa.shop.entity;
 
-public class CategoryDTO {
+import javax.persistence.*;
+
+@Entity
+@Table(name="tbl_category")
+public class Category {
+    @Id
+    @Column(name="category_code")
     private int categoryCode;
+    @Column(name="category_name")
     private String categoryName;
+    @Column(name="ref_category_code")
     private Integer refCategoryCode;
-    public CategoryDTO() {}
-    public CategoryDTO(int categoryCode, String categoryName, Integer refCategoryCode) {
+    public Category() {}
+    public Category(int categoryCode, String categoryName, Integer refCategoryCode) {
         super();
         this.categoryCode = categoryCode;
         this.categoryName = categoryName;
@@ -31,7 +39,7 @@ public class CategoryDTO {
     }
     @Override
     public String toString() {
-        return "CategoryDTO [categoryCode=" + categoryCode + ", categoryName=" + categoryName
+        return "Category [categoryCode=" + categoryCode + ", categoryName=" + categoryName
                 + ", refCategoryCode=" + refCategoryCode + "]";
     }
 }

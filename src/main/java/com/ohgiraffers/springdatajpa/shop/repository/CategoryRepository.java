@@ -1,6 +1,6 @@
-package com.ohgiraffers.springdatajpa.menu.repository;
+package com.ohgiraffers.springdatajpa.shop.repository;
 
-import com.ohgiraffers.springdatajpa.menu.entity.Category;
+import com.ohgiraffers.springdatajpa.shop.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
