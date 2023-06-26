@@ -63,7 +63,7 @@ public class ShopService {
 
         //List<Menu> menuList = menuRepository.findByMenuPriceGreaterThan(totalSales);
         //List<Menu> menuList = menuRepository.findByMenuPriceGreaterThanOrderByMenuPrice(totalSales);
-        List<Shop> shopList = shopRepository.findByTotalSalesGreaterThan(totalSales, Sort.by("totalSales").ascending());
+        List<Shop> shopList = shopRepository.findByTotalSalesGreaterThan(totalSales, Sort.by("shopCode").ascending());
 
         return shopList.stream().map(shop -> modelMapper.map(shop, ShopDTO.class)).collect(Collectors.toList());
     }

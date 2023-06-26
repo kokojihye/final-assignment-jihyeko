@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface ShopRepository extends JpaRepository<Shop, Integer> {
 
-    List<Shop> findByTotalSalesGreaterThan(Integer totalPrice);
+    List<Shop> findByTotalSalesGreaterThan(Integer totalSales);
 
-    List<Shop> findByTotalSalesGreaterThanOrderByTotalSales(Integer totalPrice);
+    List<Shop> findByTotalSalesGreaterThanOrderByTotalSales(Integer totalSales);
 
-    List<Shop> findByTotalSalesGreaterThan(Integer totalPrice, Sort sort);
+    List<Shop> findByTotalSalesGreaterThan(Integer totalSales, Sort sort);
 
 
 
